@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as rtl from "@testing-library/react";
 import '@testing-library/jest-dom/extend-expect';
-import '@testing-library/jest-dom/';
 import App from './App';
 import DarkModeButton from "./components/DarkModeButton";
 import Players from "./components/Players";
@@ -15,17 +14,14 @@ it('renders without crashing', () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-test("the app has mounted dark mode button", () => {
-	const wrapper = rtl.render(<DarkModeButton />);
-	const element = wrapper.queryByText(/dark mode/i)
-	expect(element)
-});
+test("the app has the text header", () => {
+	const wrapper = rtl.render(<App />);
+	const element = wrapper.queryByText(/sprint challenge/i);
+	expect(element).toBeInTheDocument();
+})
 
-test("the app has mounted Players", () => {
-	const wrapper = rtl.render(<Players />);
-	function callback(data) {
-		expect(data).toBeInTheDocument();
-		done()
-	}
-	fetchData(callback);
+test("the app has mounted darkmode button", () => {
+	const wrapper = rtl.render(<DarkModeButton />);
+	const element = wrapper.queryByText(/darkmode/i);
+	expect(element).toBeInTheDocument();
 });
