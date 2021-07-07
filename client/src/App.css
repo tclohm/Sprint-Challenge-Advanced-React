@@ -19,6 +19,23 @@
   color: white;
 }
 
+.dark-mode {
+  background: gray;
+  color: white;
+}
+
+.dark {
+  background: yellow;
+  padding: 0.5rem 3rem;
+  border: 0px;
+}
+
+.not-dark {
+  background: gray;
+  padding: 0.5rem 3rem;
+  border: 0px;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -30,4 +47,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  border: 1px solid black;
+  width: 10rem;
 }
